@@ -34,10 +34,11 @@ const StickyNotes = () => {
         activeNote.current = note
     }
     const bordercolor = notifyUser ? 'solid 1px red' : 'none'
+    const deleteText = notifyUser ? 'Release to delete' : 'Drag note here to delete'
     return (
         <div className='sticky-canvas'>
             {state.totalNotes.map((note) => <div key={note.id}><StickyNote note={note} createNote={createNote} updateNote={upadateNote} activateNote={updateActiveNote}/></div>)}
-        <div className='delete-zone' style={{border: bordercolor}} onDragOver={dragOver} onDragEnter={dragEnter} onDrop={dropped}>Drop note here to delete</div>
+    <div className='delete-zone' style={{border: bordercolor}} onDragOver={dragOver} onDragEnter={dragEnter} onDrop={dropped}>{deleteText}</div>
         </div>
     )
 }

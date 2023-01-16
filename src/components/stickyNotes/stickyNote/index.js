@@ -6,8 +6,8 @@ const StickyNote = ({note, createNote, updateNote, activateNote}) => {
     const addNote = () => {
         const newNote = {
             id,
-            positionX: 0,
-            positionY: 0,
+            positionX: Math.random() * 60,
+            positionY: Math.random() * 30,
             text: ''
         }
         createNote(newNote)
@@ -31,7 +31,7 @@ const StickyNote = ({note, createNote, updateNote, activateNote}) => {
         textAreaRef.current?.focus() 
     }, []);
     return (
-        <div className='sticky-note' draggable="true" onDragEnd={dropNote} onMouseDown={setActiveNote}>
+        <div className='sticky-note' draggable="true" onDragEnd={dropNote} onMouseDown={setActiveNote} style={{top: `${note.positionY}px`, left: `${note.positionX}px`}}>
             <div className='sticky-header'>
                 <div className='add-note' onClick={() => addNote()}></div>
             </div>
