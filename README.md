@@ -20,3 +20,6 @@ The app follows the parent-child component relationship and state is passed down
 
 #### `Folder structure`
 The project follows the "group files by their types" folder structres whereby all components are hosted in the components folder and every feature there in is hosted in its own folder. The shared folder hosts functionality/features that are shared across different components
+
+#### `imports structure`
+The project uses named imports as opposed to default imports for consistency in naming

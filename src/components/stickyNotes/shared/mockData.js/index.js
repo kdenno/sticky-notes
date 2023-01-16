@@ -1,4 +1,4 @@
-export const MOCK_NOTESTATE = {
+const MOCK_NOTESTATE = {
     totalNotes: [{
         id: 1,
         positionX: 0,
@@ -19,3 +19,4 @@ export const MOCK_NOTESTATE = {
 }],
 
 }
+export {MOCK_NOTESTATE}
