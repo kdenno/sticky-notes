@@ -6,10 +6,12 @@ textarea {
     border: 1px solid lightgray;
 }
 .sticky-canvas {
-    width: 1000px;
+    max-width: 1024px;
+    min-width: 768px;
     height: 600px;
     position: relative;
     overflow: hidden;
+    margin: 0 auto;
 }
 .delete-zone {
     position: absolute;
