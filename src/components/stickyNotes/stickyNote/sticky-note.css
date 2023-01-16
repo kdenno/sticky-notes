@@ -15,7 +15,6 @@
 }
 .add-note {
     position: absolute;
-    content: "\254B";
     font-size: 15px;
     top: 0;
     left: 0

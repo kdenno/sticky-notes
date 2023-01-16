@@ -4,7 +4,7 @@ function notesReducer(state, action) {
             return {...state, totalNotes: [...state.totalNotes, action.payload]}
         case 'UPDATE_NOTE':
             const newTotalNotes = [...state.totalNotes]
-            const noteIndex = newTotalNotes.findIndex((note) => note.id ===action.payload.id)
+            const noteIndex = newTotalNotes.findIndex((note) => note.id === action.payload.id)
             newTotalNotes[noteIndex] = {...action.payload}
             return {...state, totalNotes: newTotalNotes}
         case 'DELETE_NOTE':
