@@ -36,3 +36,25 @@ textarea {
     border: none;
     background-color: #fff27f;
 }
+.resizer-wrapper {
+    width: 100%;
+    position: relative;
+    height: 15px;
+    background-color: #fff27f;
+}
+.resizer {
+    width: 13px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #fff27f;
+    cursor: pointer;
+    z-index: 5;
+}
+.resizer:before {
+    content: '\21F2';
+    position: absolute;
+    left: 1px;
+    top: -5px;
+}
