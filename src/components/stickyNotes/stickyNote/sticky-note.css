@@ -1,0 +1,39 @@
+.sticky-note {
+    width: 200px;
+    min-width: 100px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    position: absolute;
+}
+.sticky-header {
+    width: 100%;
+    height: 30px;
+    background-color: #e7d63d;
+    cursor: move;
+
+}
+.add-note {
+    position: absolute;
+    content: "\254B";
+    font-size: 15px;
+    top: 0;
+    left: 0
+}
+.add-note:before {
+ content: '\254B';
+  position: absolute;
+  left: 11px;
+  top: 14px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1px;
+  color: gray;
+  cursor: pointer;
+}
+textarea {
+    outline: none;
+    resize: none;
+    border: none;
+    background-color: #fff27f;
+}

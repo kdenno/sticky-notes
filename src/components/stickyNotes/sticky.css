@@ -1,0 +1,21 @@
+.form-wrapper {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto
+}
+.sticky-form {
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100px;
+    outline: none;
+    border: 1px solid lightgray;
+}
+button {
+    background-color: #faed74;
+    border: none;
+    padding: 5px;
+}
