@@ -8,7 +8,8 @@ function notesReducer(state, action) {
             newTotalNotes[noteIndex] = {...action.payload}
             return {...state, totalNotes: newTotalNotes}
         case 'DELETE_NOTE':
-            return {...state, totalNotes: state.totalNotes.filter(note => note.id === action.payload.id)}
+            const newNotes = [...state.totalNotes].filter(note => note.id !== action.payload.id)
+            return {...state, totalNotes: newNotes}
 
     }
 }

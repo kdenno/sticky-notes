@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useId} from 'react'
 import './sticky-note.css'
 
-const StickyNote = ({note, createNote, updateNote}) => {
+const StickyNote = ({note, createNote, updateNote, activateNote}) => {
     const id = useId()
     const addNote = () => {
         const newNote = {
@@ -23,12 +23,15 @@ const StickyNote = ({note, createNote, updateNote}) => {
     const setNoteInput = (inputText) => {
         updateNote && updateNote({...note, text: inputText})
     }
+    const setActiveNote = () => {
+        activateNote && activateNote(note)
+    }
     const textAreaRef = useRef(null)
     useEffect(() => {
         textAreaRef.current?.focus() 
     }, []);
     return (
-        <div className='sticky-note' draggable="true" onDragEnd={dropNote}>
+        <div className='sticky-note' draggable="true" onDragEnd={dropNote} onMouseDown={setActiveNote}>
             <div className='sticky-header'>
                 <div className='add-note' onClick={() => addNote()}></div>
             </div>
