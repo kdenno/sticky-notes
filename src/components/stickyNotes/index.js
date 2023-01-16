@@ -19,6 +19,7 @@ const StickyNotes = () => {
     const activeNote = useRef(null)
     const createNote = (newNote) =>  dispatch({type: ActionTypes.CREATE_NOTE, payload: newNote})
     const upadateNote = (note) => dispatch({type: ActionTypes.UPDATE_NOTE, payload: note})
+    
     const dragOver = (event) => {
         event.stopPropagation()
         event.preventDefault()
@@ -38,7 +39,7 @@ const StickyNotes = () => {
     return (
         <div className='sticky-canvas'>
             {state.totalNotes.map((note) => <div key={note.id}>
-                <StickyNote note={note} createNote={createNote} updateNote={upadateNote} activateNote={updateActiveNote}/>
+                <StickyNote note={note} createNote={createNote} updateNote={upadateNote} updateNoteTracker={updateActiveNote}/>
             </div>)}
             <div className='delete-zone' style={{border: bordercolor}} onDragOver={dragOver} onDragEnter={dragEnter} onDrop={dropped}>{deleteText}</div>
         </div>

@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useId} from 'react'
 import './sticky-note.css'
 
-const StickyNote = ({note, createNote, updateNote, activateNote}) => {
+const StickyNote = ({note, createNote, updateNote, updateNoteTracker}) => {
     const id = useId()
     const addNote = () => {
         const newNote = {
@@ -13,6 +13,7 @@ const StickyNote = ({note, createNote, updateNote, activateNote}) => {
         createNote(newNote)
     }
     const dropNote = (event) => {
+        /* get the current position of the note update the state and position of the note. This will later be used to plot the notes in the right positions after fetching from local storage */
         const positionX = event.pageX;
         const positionY = event.pageY;
         event.target.style.left = `${positionX}px`
@@ -24,7 +25,7 @@ const StickyNote = ({note, createNote, updateNote, activateNote}) => {
         updateNote && updateNote({...note, text: inputText})
     }
     const setActiveNote = () => {
-        activateNote && activateNote(note)
+        updateNoteTracker && updateNoteTracker(note)
     }
     const textAreaRef = useRef(null)
     useEffect(() => {
