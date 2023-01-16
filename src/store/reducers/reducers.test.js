@@ -16,7 +16,7 @@ describe('Reducers logic', () => {
         const action = {type: ActionTypes.CREATE_NOTE, payload: newNote}
         const currentState = notesReducer(MOCK_NOTESTATE, action)
         it('it should add a new note to the array of notes ', () => {
-            expect(currentState.totalNotes.length).toHaveLength(4)
+            expect(currentState.totalNotes).toHaveLength(4)
             expect(currentState.totalNotes[3].id).toEqual(100)
 
         })
@@ -24,7 +24,7 @@ describe('Reducers logic', () => {
     })
     describe('Update Note', () => {
         const newNote = {
-            id: 100,
+            id: 15,
             positionX: 0,
             positionY: 0,
             text: 'test4'
@@ -32,7 +32,7 @@ describe('Reducers logic', () => {
         const action = {type: ActionTypes.UPDATE_NOTE, payload: newNote}
         const currentState = notesReducer(MOCK_NOTESTATE, action)
         it('it should update the note in the notes array ', () => {
-            expect(currentState.totalNotes[3].text).toEqual('test4')
+            expect(currentState.totalNotes[2].text).toEqual('test4')
 
         })
 
