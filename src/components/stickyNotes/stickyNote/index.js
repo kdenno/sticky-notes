@@ -35,7 +35,7 @@ const StickyNote = ({note, createNote, updateNote, activateNote}) => {
             <div className='sticky-header'>
                 <div className='add-note' onClick={() => addNote()}></div>
             </div>
-            <textarea placeholder='Add note...' value={note.text} ref={textAreaRef} onChange={e => setNoteInput(e.target.value)}></textarea>
+            <textarea placeholder='Write note...' value={note.text} ref={textAreaRef} onChange={e => setNoteInput(e.target.value)}></textarea>
         </div>
     )
 }
